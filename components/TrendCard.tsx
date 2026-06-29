@@ -15,7 +15,7 @@ export default function TrendCard({ item, onSave, onIdeas }: Props) {
       </span>
       <div className="flex-1 min-w-0">
         <a
-          href={item.url}
+          href={`https://www.google.com/search?q=${encodeURIComponent(item.keyword)}`}
           target="_blank"
           rel="noopener noreferrer"
           className="text-lg font-semibold text-gray-800 hover:text-blue-600 truncate block"
