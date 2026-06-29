@@ -46,6 +46,11 @@ export default function HomePage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ keyword }),
       })
+      if (!res.ok) {
+        setIdeas([])
+        setActiveKeyword(null)
+        return
+      }
       const data = await res.json()
       setIdeas(data.ideas ?? [])
     } catch {
